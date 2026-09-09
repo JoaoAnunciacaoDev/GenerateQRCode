@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Crie e baixe QR Codes estáticos gratuitamente, direto no navegador.">
+  <title>Seu QR Code</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="vendor/qrcode.js" defer></script>
+  <script src="vendor/qrcode_UTF8.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main>
+    <h1>Um link. Muitas conexões.</h1>
+    <p class="intro">Transforme um link ou texto em um QR Code para compartilhar.</p>
+    <div class="workspace">
+      <form id="qr-form">
+        <h2>Crie o seu código</h2>
+        <label for="name">Nome do arquivo <span>(opcional)</span></label>
+        <input id="name" maxlength="80" placeholder="Ex.: Aniversário da Ana" autocomplete="off">
+        <label for="content">Link ou texto</label>
+        <textarea id="content" rows="5" required placeholder="https://exemplo.com" aria-describedby="content-help" maxlength="2000"></textarea>
+        <p id="content-help" class="help">Para abrir um site, cole o endereço completo, incluindo https://.</p>
+        <button type="submit">Gerar QR Code <span aria-hidden="true">↗</span></button>
+        <p id="status" role="status" aria-live="polite"></p>
+      </form>
+      <section class="preview" aria-label="Prévia do QR Code">
+        <span class="eyebrow">PRONTO PARA COMPARTILHAR</span>
+        <div class="paper">
+          <div id="empty"><span aria-hidden="true" class="empty-icon">＋</span><p>Seu QR Code aparece aqui</p><small>Preencha o conteúdo e clique em gerar.</small></div>
+          <canvas id="qr-canvas" hidden role="img" aria-label="QR Code gerado"></canvas>
+        </div>
+        <a id="download" class="download" hidden download="qr-code.png">Baixar PNG <span aria-hidden="true">↓</span></a>
+        <p class="help">Fundo branco e alta resolução para salvar e imprimir.</p>
+      </section>
+    </div>
+    <footer><strong>Seu código não expira.</strong> O conteúdo fica gravado no próprio QR Code. Se usar um link, mantenha a página de destino disponível.<p>Gerado no seu navegador. O conteúdo não é enviado a um servidor.</p></footer>
+  </main>
+</body>
+</html>
